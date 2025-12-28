@@ -72,7 +72,7 @@ export const demoProjects = [
     title: "Restaurant Website",
     category: "Food & Dining",
     description: "Modern website with online menu, reservation system, and WhatsApp ordering",
-    beforeImage: "https://via.placeholder.com/600x400/e5e7eb/6b7280?text=Old+Website",
+    beforeImage: "https://itseeze.com/_webedit/cached-images/1315.jpg",
     afterImage: "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDQ2NDF8MHwxfHNlYXJjaHwyfHxyZXN0YXVyYW50fGVufDB8fHx8MTc2Njg1NTQ3MHww&ixlib=rb-4.1.0&q=85",
     features: ["Online Menu", "Table Booking", "WhatsApp Orders", "Google Maps"]
   },
@@ -81,7 +81,7 @@ export const demoProjects = [
     title: "Local Store Website",
     category: "Retail",
     description: "Clean, professional website showcasing products with easy customer contact",
-    beforeImage: "https://via.placeholder.com/600x400/e5e7eb/6b7280?text=Basic+Store+Page",
+    beforeImage: "https://itseeze.com/_webedit/cached-images/1317.jpg",
     afterImage: "https://images.unsplash.com/photo-1578916171728-46686eac8d58?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDk1ODF8MHwxfHNlYXJjaHwxfHxyZXRhaWwlMjBzdG9yZXxlbnwwfHx8fDE3NjY5MDQwNzh8MA&ixlib=rb-4.1.0&q=85",
     features: ["Product Catalog", "Location Map", "Direct Calling", "Business Hours"]
   },
@@ -90,7 +90,7 @@ export const demoProjects = [
     title: "Clinic Website",
     category: "Healthcare",
     description: "Professional medical website with appointment booking and service information",
-    beforeImage: "https://via.placeholder.com/600x400/e5e7eb/6b7280?text=Simple+Clinic+Info",
+    beforeImage: "https://itseeze.com/_webedit/cached-images/1320.webp",
     afterImage: "https://images.unsplash.com/photo-1631248055158-edec7a3c072b?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2Njl8MHwxfHNlYXJjaHwxfHxtZWRpY2FsJTIwY2xpbmljfGVufDB8fHx8MTc2NjkwNDA4M3ww&ixlib=rb-4.1.0&q=85",
     features: ["Appointment Booking", "Doctor Info", "Services List", "Emergency Contact"]
   }
