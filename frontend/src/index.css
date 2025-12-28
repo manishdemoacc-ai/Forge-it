@@ -12,6 +12,17 @@ body {
     -moz-osx-font-smoothing: grayscale;
 }
 
+
+[class*="emergent-watermark"], 
+[class*="made-with-emergent"] {
+    display: none !important;
+}
+
+.the-exact-class-name {
+    display: none !important;
+}
+
+
 code {
     font-family:
         source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
