@@ -35,11 +35,7 @@ const Header = () => {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled
-          ? 'bg-white/80 dark:bg-gray-900/80 backdrop-blur-lg shadow-lg'
-          : 'bg-transparent'
-      }`}
+      className="fixed top-0 left-0 right-0 z-50 bg-white/70 dark:bg-gray-900/70 backdrop-blur-md transition-all duration-300 shadow-sm"
     >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 md:h-20">
@@ -60,9 +56,10 @@ const Header = () => {
               <button
                 key={link.name}
                 onClick={() => scrollToSection(link.href)}
-                className="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors font-medium"
+                className="relative text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors font-medium py-2 group"
               >
                 {link.name}
+                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-blue-600 dark:bg-blue-400 group-hover:w-full transition-all duration-300"></span>
               </button>
             ))}
           </nav>
