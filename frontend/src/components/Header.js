@@ -4,12 +4,11 @@ const Header = () => {
   const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 40);
+    const onScroll = () => {
+      setScrolled(window.scrollY > 30);
     };
-
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
+    window.addEventListener("scroll", onScroll);
+    return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
   const scrollTo = (id) => {
@@ -22,51 +21,54 @@ const Header = () => {
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300
         ${
           scrolled
-            ? "bg-black shadow-md py-3"
-            : "bg-black/70 backdrop-blur-md py-5"
+            ? "bg-[#0b1220]/95 shadow-lg backdrop-blur-md py-3"
+            : "bg-transparent py-5"
         }`}
     >
       <div className="max-w-7xl mx-auto px-6">
         <div className="flex items-center justify-between">
 
-          {/* ===== TEXT LOGO (ORIGINAL STYLE) ===== */}
-          <button
+          {/* ===== LOGO AREA ===== */}
+          <div
             onClick={() => scrollTo("home")}
-            className="text-white font-extrabold text-lg tracking-wide hover:text-red-500 transition-colors"
+            className="flex items-center gap-3 cursor-pointer"
           >
-            Forge<span className="text-red-500">it</span>
-          </button>
+            <div className="w-10 h-10 rounded-lg bg-blue-600 flex items-center justify-center text-white font-bold text-lg">
+              F
+            </div>
+            <div className="leading-tight">
+              <p className="text-white font-semibold text-sm">
+                Forgeit
+              </p>
+              <p className="text-gray-400 text-xs">
+                Built strong. Built online.
+              </p>
+            </div>
+          </div>
 
-          {/* ===== OLD MENU BAR ===== */}
-          <nav className="hidden md:flex space-x-8 text-gray-300">
-            <button
-              onClick={() => scrollTo("services")}
-              className="hover:text-white transition-colors"
-            >
+          {/* ===== CENTER MENU ===== */}
+          <nav className="hidden md:flex items-center space-x-8 text-sm text-gray-300">
+            <button onClick={() => scrollTo("home")} className="hover:text-white transition">
+              Home
+            </button>
+            <button onClick={() => scrollTo("services")} className="hover:text-white transition">
               Services
             </button>
-
-            <button
-              onClick={() => scrollTo("pricing")}
-              className="hover:text-white transition-colors"
-            >
-              Pricing
-            </button>
-
-            <button
-              onClick={() => scrollTo("portfolio")}
-              className="hover:text-white transition-colors"
-            >
+            <button onClick={() => scrollTo("portfolio")} className="hover:text-white transition">
               Portfolio
             </button>
-
-            <button
-              onClick={() => scrollTo("contact")}
-              className="hover:text-white transition-colors"
-            >
+            <button onClick={() => scrollTo("pricing")} className="hover:text-white transition">
+              Pricing
+            </button>
+            <button onClick={() => scrollTo("contact")} className="hover:text-white transition">
               Contact
             </button>
           </nav>
+
+          {/* ===== RIGHT ICON ===== */}
+          <div className="w-9 h-9 flex items-center justify-center rounded-full bg-yellow-400/10 text-yellow-400">
+            ☀
+          </div>
 
         </div>
       </div>
