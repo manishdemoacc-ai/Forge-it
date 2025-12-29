@@ -5,13 +5,13 @@ const Header = () => {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
 
-  // Dark mode
+  // Dark mode toggle
   useEffect(() => {
     if (dark) document.documentElement.classList.add("dark");
     else document.documentElement.classList.remove("dark");
   }, [dark]);
 
-  // Scroll detect
+  // Scroll effect
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 40);
     window.addEventListener("scroll", onScroll);
@@ -26,7 +26,7 @@ const Header = () => {
         fixed top-0 left-0 right-0 z-50
         transition-all duration-300
         ${scrolled
-          ? "backdrop-blur-xl bg-white/10 dark:bg-black/10 border-b border-white/20"
+          ? "backdrop-blur-xl bg-white/70 dark:bg-black/30 border-b border-black/10 dark:border-white/20"
           : "bg-transparent"}
       `}
     >
@@ -38,11 +38,20 @@ const Header = () => {
             <div className="w-9 h-9 rounded-lg bg-blue-600 flex items-center justify-center text-white font-bold text-sm">
               F
             </div>
+
             <div className="hidden sm:block">
-              <p className="font-semibold text-white group-hover:text-blue-400 transition">
+              <p className="
+                font-semibold
+                text-gray-900 dark:text-white
+                group-hover:text-blue-500
+                transition
+              ">
                 Forgeit
               </p>
-              <p className="text-xs text-gray-300">
+              <p className="
+                text-xs
+                text-gray-600 dark:text-gray-300
+              ">
                 Built strong. Built online.
               </p>
             </div>
@@ -56,7 +65,8 @@ const Header = () => {
                 href={`#${item.toLowerCase()}`}
                 className="
                   relative group
-                  text-white/80 hover:text-blue-400
+                  text-gray-700 dark:text-white/80
+                  hover:text-blue-500
                   transition
                 "
               >
@@ -74,51 +84,51 @@ const Header = () => {
           {/* ACTIONS */}
           <div className="flex items-center gap-2">
 
-            {/* THEME */}
+            {/* THEME BUTTON */}
             <button
               onClick={() => setDark(!dark)}
               className="
                 w-8 h-8 rounded-full
-                bg-white/10 hover:bg-blue-500/20
-                text-blue-400 transition
+                bg-black/5 dark:bg-white/10
+                hover:bg-blue-500/20
+                transition
                 flex items-center justify-center text-sm
               "
             >
               {dark ? "🌙" : "☀️"}
             </button>
 
-            {/* MOBILE TOGGLE */}
+            {/* MOBILE MENU BUTTON */}
             <button
-              className="md:hidden text-white p-1"
+              className="md:hidden p-1"
               onClick={() => setOpen(!open)}
             >
               <div className="space-y-1">
-                <span className="block w-5 h-[2px] bg-white"></span>
-                <span className="block w-5 h-[2px] bg-white"></span>
-                <span className="block w-5 h-[2px] bg-white"></span>
+                <span className="block w-5 h-[2px] bg-gray-900 dark:bg-white"></span>
+                <span className="block w-5 h-[2px] bg-gray-900 dark:bg-white"></span>
+                <span className="block w-5 h-[2px] bg-gray-900 dark:bg-white"></span>
               </div>
             </button>
           </div>
         </div>
 
-        {/* MOBILE MENU (SMALLER) */}
+        {/* MOBILE MENU */}
         {open && (
-          <div
-            className="
-              md:hidden mt-3 rounded-lg
-              backdrop-blur-xl bg-black/40
-              px-4 py-3 space-y-3
-              text-sm
-            "
-          >
+          <div className="
+            md:hidden mt-3 rounded-lg
+            backdrop-blur-xl
+            bg-white/90 dark:bg-black/50
+            px-4 py-3 space-y-3 text-sm
+          ">
             {menuItems.map((item) => (
               <a
                 key={item}
                 href={`#${item.toLowerCase()}`}
                 onClick={() => setOpen(false)}
                 className="
-                  block text-white/90
-                  hover:text-blue-400
+                  block
+                  text-gray-800 dark:text-white/90
+                  hover:text-blue-500
                   transition
                 "
               >
