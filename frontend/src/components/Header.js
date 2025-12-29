@@ -1,5 +1,5 @@
 import React from "react";
-import logo from "../assets/logo.png";
+import logo from "./logo.png";
 
 const Header = () => {
   return (
@@ -17,30 +17,10 @@ const Header = () => {
 
         {/* Navigation */}
         <nav className="hidden md:flex space-x-6">
-          <a
-            href="#home"
-            className="text-gray-300 hover:text-red-600 transition-colors"
-          >
-            Home
-          </a>
-          <a
-            href="#about"
-            className="text-gray-300 hover:text-red-600 transition-colors"
-          >
-            About
-          </a>
-          <a
-            href="#services"
-            className="text-gray-300 hover:text-red-600 transition-colors"
-          >
-            Services
-          </a>
-          <a
-            href="#contact"
-            className="text-gray-300 hover:text-red-600 transition-colors"
-          >
-            Contact
-          </a>
+          <a href="#home" className="text-gray-300 hover:text-red-600">Home</a>
+          <a href="#about" className="text-gray-300 hover:text-red-600">About</a>
+          <a href="#services" className="text-gray-300 hover:text-red-600">Services</a>
+          <a href="#contact" className="text-gray-300 hover:text-red-600">Contact</a>
         </nav>
       </div>
     </header>
