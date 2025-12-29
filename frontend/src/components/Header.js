@@ -1,74 +1,65 @@
 import React, { useEffect, useState } from "react";
 
 const Header = () => {
-  const [scrolled, setScrolled] = useState(false);
+  const [dark, setDark] = useState(true);
 
+  // Theme toggle logic
   useEffect(() => {
-    const onScroll = () => {
-      setScrolled(window.scrollY > 30);
-    };
-    window.addEventListener("scroll", onScroll);
-    return () => window.removeEventListener("scroll", onScroll);
-  }, []);
-
-  const scrollTo = (id) => {
-    const el = document.getElementById(id);
-    if (el) el.scrollIntoView({ behavior: "smooth" });
-  };
+    if (dark) {
+      document.documentElement.classList.add("dark");
+    } else {
+      document.documentElement.classList.remove("dark");
+    }
+  }, [dark]);
 
   return (
-    <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300
-        ${
-          scrolled
-            ? "bg-[#0b1220]/95 shadow-lg backdrop-blur-md py-3"
-            : "bg-transparent py-5"
-        }`}
-    >
-      <div className="max-w-7xl mx-auto px-6">
+    <header className="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-black/70 backdrop-blur-md shadow-md">
+      <div className="max-w-7xl mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
 
-          {/* ===== LOGO AREA ===== */}
-          <div
-            onClick={() => scrollTo("home")}
-            className="flex items-center gap-3 cursor-pointer"
+          {/* ===== LOGO (TEXT – ORIGINAL STYLE) ===== */}
+          <a
+            href="/"
+            className="flex items-center gap-3 group"
           >
-            <div className="w-10 h-10 rounded-lg bg-blue-600 flex items-center justify-center text-white font-bold text-lg">
+            <div className="w-10 h-10 rounded-lg bg-blue-500 flex items-center justify-center text-white font-bold text-lg">
               F
             </div>
             <div className="leading-tight">
-              <p className="text-white font-semibold text-sm">
+              <p className="text-white font-semibold group-hover:text-blue-400 transition">
                 Forgeit
               </p>
-              <p className="text-gray-400 text-xs">
+              <p className="text-xs text-gray-400">
                 Built strong. Built online.
               </p>
             </div>
-          </div>
+          </a>
 
-          {/* ===== CENTER MENU ===== */}
-          <nav className="hidden md:flex items-center space-x-8 text-sm text-gray-300">
-            <button onClick={() => scrollTo("home")} className="hover:text-white transition">
-              Home
-            </button>
-            <button onClick={() => scrollTo("services")} className="hover:text-white transition">
-              Services
-            </button>
-            <button onClick={() => scrollTo("portfolio")} className="hover:text-white transition">
-              Portfolio
-            </button>
-            <button onClick={() => scrollTo("pricing")} className="hover:text-white transition">
-              Pricing
-            </button>
-            <button onClick={() => scrollTo("contact")} className="hover:text-white transition">
-              Contact
-            </button>
+          {/* ===== NAVIGATION ===== */}
+          <nav className="hidden md:flex gap-8 text-sm">
+            {["Home", "Services", "Portfolio", "Pricing", "Contact"].map(
+              (item) => (
+                <a
+                  key={item}
+                  href={`#${item.toLowerCase()}`}
+                  className="relative group text-gray-300 hover:text-blue-400 transition duration-300"
+                >
+                  {item}
+                  <span className="absolute left-0 -bottom-1 h-[2px] w-0 bg-blue-500 transition-all duration-300 group-hover:w-full"></span>
+                </a>
+              )
+            )}
           </nav>
 
-          {/* ===== RIGHT ICON ===== */}
-          <div className="w-9 h-9 flex items-center justify-center rounded-full bg-yellow-400/10 text-yellow-400">
-            ☀
-          </div>
+          {/* ===== THEME TOGGLE ===== */}
+          <button
+            onClick={() => setDark(!dark)}
+            className="w-9 h-9 rounded-full bg-blue-500/10 text-blue-400 
+                       hover:bg-blue-500/20 transition flex items-center justify-center"
+            aria-label="Toggle theme"
+          >
+            {dark ? "🌙" : "☀"}
+          </button>
 
         </div>
       </div>
