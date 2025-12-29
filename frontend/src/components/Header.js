@@ -5,17 +5,15 @@ const Header = () => {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
 
-  // Dark mode toggle
+  // Dark mode
   useEffect(() => {
     if (dark) document.documentElement.classList.add("dark");
     else document.documentElement.classList.remove("dark");
   }, [dark]);
 
-  // Scroll detection
+  // Scroll detect
   useEffect(() => {
-    const onScroll = () => {
-      setScrolled(window.scrollY > 40);
-    };
+    const onScroll = () => setScrolled(window.scrollY > 40);
     window.addEventListener("scroll", onScroll);
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
@@ -32,15 +30,15 @@ const Header = () => {
           : "bg-transparent"}
       `}
     >
-      <div className="max-w-7xl mx-auto px-6 py-4">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 py-3">
         <div className="flex items-center justify-between">
 
           {/* LOGO */}
           <a href="/" className="flex items-center gap-3 group">
-            <div className="w-10 h-10 rounded-lg bg-blue-600 flex items-center justify-center text-white font-bold">
+            <div className="w-9 h-9 rounded-lg bg-blue-600 flex items-center justify-center text-white font-bold text-sm">
               F
             </div>
-            <div>
+            <div className="hidden sm:block">
               <p className="font-semibold text-white group-hover:text-blue-400 transition">
                 Forgeit
               </p>
@@ -73,49 +71,56 @@ const Header = () => {
             ))}
           </nav>
 
-          {/* RIGHT ACTIONS */}
-          <div className="flex items-center gap-3">
+          {/* ACTIONS */}
+          <div className="flex items-center gap-2">
 
-            {/* THEME TOGGLE */}
+            {/* THEME */}
             <button
               onClick={() => setDark(!dark)}
               className="
-                w-9 h-9 rounded-full
+                w-8 h-8 rounded-full
                 bg-white/10 hover:bg-blue-500/20
                 text-blue-400 transition
-                flex items-center justify-center
+                flex items-center justify-center text-sm
               "
             >
               {dark ? "🌙" : "☀️"}
             </button>
 
-            {/* MOBILE MENU BUTTON */}
+            {/* MOBILE TOGGLE */}
             <button
-              className="md:hidden text-white"
+              className="md:hidden text-white p-1"
               onClick={() => setOpen(!open)}
             >
               <div className="space-y-1">
-                <span className="block w-6 h-[2px] bg-white"></span>
-                <span className="block w-6 h-[2px] bg-white"></span>
-                <span className="block w-6 h-[2px] bg-white"></span>
+                <span className="block w-5 h-[2px] bg-white"></span>
+                <span className="block w-5 h-[2px] bg-white"></span>
+                <span className="block w-5 h-[2px] bg-white"></span>
               </div>
             </button>
           </div>
         </div>
 
-        {/* MOBILE MENU */}
+        {/* MOBILE MENU (SMALLER) */}
         {open && (
-          <div className="
-            md:hidden mt-4 rounded-xl
-            backdrop-blur-xl bg-black/40
-            p-4 space-y-4
-          ">
+          <div
+            className="
+              md:hidden mt-3 rounded-lg
+              backdrop-blur-xl bg-black/40
+              px-4 py-3 space-y-3
+              text-sm
+            "
+          >
             {menuItems.map((item) => (
               <a
                 key={item}
                 href={`#${item.toLowerCase()}`}
                 onClick={() => setOpen(false)}
-                className="block text-white hover:text-blue-400 transition"
+                className="
+                  block text-white/90
+                  hover:text-blue-400
+                  transition
+                "
               >
                 {item}
               </a>
