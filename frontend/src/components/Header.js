@@ -45,7 +45,7 @@ const Header = () => {
               <span className="text-white font-bold text-xl">F</span>
             </div>
             <div>
-              <h1 className="text-xl font-bold text-gray-900 dark:text-white">Fordgeit</h1>
+              <h1 className="text-xl font-bold text-gray-900 dark:text-white">Forgeit</h1>
               <p className="text-xs text-gray-600 dark:text-gray-400">Built strong. Built online.</p>
             </div>
           </div>
