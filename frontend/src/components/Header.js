@@ -9,16 +9,14 @@ const Header = () => {
   );
 
   useEffect(() => {
-    const onScroll = () => {
-      setScrolled(window.scrollY > 20);
-    };
-    window.addEventListener("scroll", onScroll);
-    return () => window.removeEventListener("scroll", onScroll);
+    const handleScroll = () => setScrolled(window.scrollY > 20);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   const toggleTheme = () => {
     document.documentElement.classList.toggle("dark");
-    setDarkMode(!darkMode);
+    setDarkMode((prev) => !prev);
   };
 
   const navItems = [
@@ -40,13 +38,14 @@ const Header = () => {
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300
       ${
         scrolled
-          ? "backdrop-blur-md bg-white/70 dark:bg-black/60 shadow-md"
+          ? "backdrop-blur-md bg-white/60 dark:bg-black/50 shadow-md"
           : "bg-transparent"
       }`}
     >
-      <div className="max-w-7xl mx-auto px-4 py-3">
+      <div className="max-w-7xl mx-auto px-4 py-2">
         <div className="flex items-center justify-between">
-          {/* LOGO (VISIBLE ON MOBILE & DESKTOP) */}
+
+          {/* LOGO */}
           <div
             onClick={() => scrollTo("home")}
             className="cursor-pointer leading-tight"
@@ -90,24 +89,24 @@ const Header = () => {
             {/* THEME TOGGLE */}
             <button
               onClick={toggleTheme}
-              className="p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700 transition"
+              className="p-2 rounded-full hover:bg-black/10 dark:hover:bg-white/10 transition"
             >
               {darkMode ? <Sun size={18} /> : <Moon size={18} />}
             </button>
           </nav>
 
           {/* MOBILE ACTIONS */}
-          <div className="flex items-center gap-2 md:hidden">
+          <div className="flex items-center gap-1 md:hidden">
             <button
               onClick={toggleTheme}
-              className="p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700 transition"
+              className="p-2 rounded-full hover:bg-black/10 dark:hover:bg-white/10 transition"
             >
               {darkMode ? <Sun size={18} /> : <Moon size={18} />}
             </button>
 
             <button
               onClick={() => setMenuOpen(!menuOpen)}
-              className="p-2 rounded-lg hover:bg-gray-200 dark:hover:bg-gray-700 transition"
+              className="p-2 rounded-lg hover:bg-black/10 dark:hover:bg-white/10 transition"
             >
               {menuOpen ? <X size={22} /> : <Menu size={22} />}
             </button>
@@ -117,8 +116,8 @@ const Header = () => {
 
       {/* MOBILE MENU */}
       {menuOpen && (
-        <div className="md:hidden backdrop-blur-md bg-white/90 dark:bg-black/90 border-t dark:border-gray-700">
-          <div className="flex flex-col px-6 py-4 gap-4">
+        <div className="md:hidden backdrop-blur-md bg-white/80 dark:bg-black/80 border-t border-black/10 dark:border-white/10">
+          <div className="flex flex-col px-5 py-3 gap-3">
             {navItems.map((item) => (
               <button
                 key={item.id}
