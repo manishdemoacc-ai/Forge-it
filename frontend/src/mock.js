@@ -172,13 +172,13 @@ export const processSteps = [
 
 export const socialLinks = [
   { name: "Facebook", url: "https://facebook.com", icon: "Facebook" },
-  { name: "Instagram", url: "https://instagram.com", icon: "Instagram" },
-  { name: "Twitter", url: "https://twitter.com", icon: "Twitter" },
-  { name: "LinkedIn", url: "https://linkedin.com", icon: "Linkedin" }
+  { name: "Instagram", url: "https://instagram.com/forgeit_in/", icon: "Instagram" },
+  { name: "Twitter", url: "https://x.com/FORGEIT_iN/", icon: "Twitter" },
+  { name: "LinkedIn", url: "https://linkedin.com/", icon: "Linkedin" }
 ];
 
 export const contactInfo = {
   phone: "+91 8610336533",
-  email: "manishdemoacc@gmail.com",
+  email: "forgeit.co@gmail.com",
   whatsapp: "+918610336533"
 };
