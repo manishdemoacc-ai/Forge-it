@@ -39,22 +39,29 @@ const Header = () => {
               F
             </div>
 
-            <div className="hidden sm:block">
-              <p className="
-                font-semibold
-                text-gray-900 dark:text-white
-                group-hover:text-blue-500
-                transition
-              ">
-                Forgeit
-              </p>
-              <p className="
-                text-xs
-                text-gray-600 dark:text-gray-300
-              ">
-                Built strong. Built online.
-              </p>
-            </div>
+            <div className="leading-tight">
+          <p
+    className="
+      font-semibold
+      text-sm sm:text-base
+      text-gray-900 dark:text-white
+      group-hover:text-blue-500
+      transition
+    "
+  >
+    Forgeit
+  </p>
+
+  <p
+    className="
+      text-[10px] sm:text-xs
+      text-gray-600 dark:text-gray-300
+    "
+  >
+    Built strong. Built online.
+  </p>
+</div>
+
           </a>
 
           {/* DESKTOP MENU */}
