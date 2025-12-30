@@ -173,7 +173,7 @@ export const processSteps = [
 export const socialLinks = [
   { name: "Facebook", url: "https://facebook.com", icon: "Facebook" },
   { name: "Instagram", url: "https://instagram.com/forgeit_in/", icon: "Instagram" },
-  { name: "Twitter", url: "https://x.com/FORGEIT_iN/", icon: "Twitter" },
+  { name: "Twitter", url: "https://x.com/forgeit_in/", icon: "Twitter" },
   { name: "LinkedIn", url: "https://linkedin.com/", icon: "Linkedin" }
 ];
 
