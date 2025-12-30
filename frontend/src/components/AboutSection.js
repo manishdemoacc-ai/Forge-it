@@ -16,13 +16,13 @@ const AboutSection = () => {
           {/* Left Content */}
           <div className="space-y-6 animate-fade-in">
             <span className="text-blue-600 dark:text-blue-400 font-semibold text-sm uppercase tracking-wider">
-              About Fordgeit
+              About Forgeit
             </span>
             <h2 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white leading-tight">
               We Build Digital Homes for Local Businesses
             </h2>
             <p className="text-lg text-gray-600 dark:text-gray-300">
-              At Fordgeit, we believe every local business deserves a strong online presence. 
+              At Forgeit, we believe every local business deserves a strong online presence. 
               We specialize in creating professional, mobile-friendly websites that help shops, 
               restaurants, clinics, and service providers connect with their customers.
             </p>
