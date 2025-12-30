@@ -34,7 +34,7 @@ const Footer = () => {
                 <span className="text-white font-bold text-xl">F</span>
               </div>
               <div>
-                <h3 className="text-xl font-bold">Fordgeit</h3>
+                <h3 className="text-xl font-bold">Forgeit</h3>
                 <p className="text-sm text-gray-400">Built strong. Built online.</p>
               </div>
             </div>
@@ -144,7 +144,7 @@ const Footer = () => {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-6">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <p className="text-gray-400 text-sm text-center md:text-left">
-              © {new Date().getFullYear()} Fordgeit. All rights reserved.
+              © {new Date().getFullYear()} Forgeit. All rights reserved.
             </p>
             <div className="flex gap-6 text-sm">
               <button className="text-gray-400 hover:text-blue-400 transition-colors">
