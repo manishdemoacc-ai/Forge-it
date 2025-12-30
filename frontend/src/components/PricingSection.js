@@ -18,7 +18,9 @@ const PricingSection = () => {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16 animate-fade-in">
-          <span className="text-blue-600 dark:text-blue-400 font-semibold text-sm uppercase tracking-wider">Pricing</span>
+          <span className="text-blue-600 dark:text-blue-400 font-semibold text-sm uppercase tracking-wider">
+            Pricing
+          </span>
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mt-4 mb-6">
             Affordable Plans for Every Business
           </h2>
@@ -58,7 +60,9 @@ const PricingSection = () => {
                   <span className="text-5xl font-bold text-gray-900 dark:text-white">
                     {plan.price.toLocaleString('en-IN')}
                   </span>
-                  <span className="text-gray-500 dark:text-gray-400 ml-2">/ {plan.duration}</span>
+                  <span className="text-gray-500 dark:text-gray-400 ml-2">
+                    / {plan.duration}
+                  </span>
                 </div>
               </CardHeader>
 
@@ -70,7 +74,9 @@ const PricingSection = () => {
                       <div className="flex-shrink-0 w-5 h-5 bg-green-100 dark:bg-green-900/30 rounded-full flex items-center justify-center mt-0.5">
                         <Check className="h-3 w-3 text-green-600 dark:text-green-400" />
                       </div>
-                      <span className="text-gray-700 dark:text-gray-300 text-sm">{feature}</span>
+                      <span className="text-gray-700 dark:text-gray-300 text-sm">
+                        {feature}
+                      </span>
                     </div>
                   ))}
                 </div>
@@ -99,9 +105,14 @@ const PricingSection = () => {
         </div>
       </div>
 
-      {/* Plan Details Modal */}
+      {/* ===================== */}
+      {/* PLAN DETAILS MODAL */}
+      {/* ===================== */}
       <Dialog open={!!selectedPlan} onOpenChange={() => setSelectedPlan(null)}>
-        <DialogContent className="max-w-2xl">
+        <DialogContent
+          className="max-w-2xl max-h-[90vh] overflow-y-auto"
+          style={{ scrollBehavior: 'smooth' }}
+        >
           {selectedPlan && (
             <>
               <DialogHeader>
@@ -124,20 +135,26 @@ const PricingSection = () => {
                     <span className="text-6xl font-bold text-blue-600 dark:text-blue-400">
                       {selectedPlan.price.toLocaleString('en-IN')}
                     </span>
-                    <span className="text-xl text-gray-600 dark:text-gray-400 ml-3">/ {selectedPlan.duration}</span>
+                    <span className="text-xl text-gray-600 dark:text-gray-400 ml-3">
+                      / {selectedPlan.duration}
+                    </span>
                   </div>
                 </div>
 
                 {/* Features */}
                 <div>
-                  <h3 className="text-lg font-semibold mb-4 text-gray-900 dark:text-white">What's Included</h3>
+                  <h3 className="text-lg font-semibold mb-4 text-gray-900 dark:text-white">
+                    What's Included
+                  </h3>
                   <div className="space-y-3">
                     {selectedPlan.features.map((feature, idx) => (
                       <div key={idx} className="flex items-start space-x-3">
                         <div className="flex-shrink-0 w-6 h-6 bg-green-100 dark:bg-green-900/30 rounded-full flex items-center justify-center mt-0.5">
                           <Check className="h-4 w-4 text-green-600 dark:text-green-400" />
                         </div>
-                        <span className="text-gray-700 dark:text-gray-300">{feature}</span>
+                        <span className="text-gray-700 dark:text-gray-300">
+                          {feature}
+                        </span>
                       </div>
                     ))}
                   </div>
@@ -145,7 +162,9 @@ const PricingSection = () => {
 
                 {/* Payment Info */}
                 <div className="bg-gray-50 dark:bg-gray-800 rounded-xl p-6">
-                  <h3 className="text-lg font-semibold mb-3 text-gray-900 dark:text-white">Payment Details</h3>
+                  <h3 className="text-lg font-semibold mb-3 text-gray-900 dark:text-white">
+                    Payment Details
+                  </h3>
                   <div className="space-y-2 text-gray-600 dark:text-gray-300">
                     <p>• GST applicable as per government regulations</p>
                     <p>• Secure payment processing</p>
