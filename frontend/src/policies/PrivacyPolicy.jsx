@@ -4,16 +4,16 @@ export default function PrivacyPolicy() {
       <p>
         Forgeit respects your privacy and is committed to protecting your
         personal information. We collect basic details such as name, email,
-        phone number, and business information only to provide our services.
+        phone number, and business information only for service purposes.
       </p>
 
       <p className="mt-4">
-        We do not sell or share your data with third parties. All information
-        is used strictly for communication and service delivery.
+        We do not sell or share your personal data with third parties.
+        Information is used strictly for communication and service delivery.
       </p>
 
       <p className="mt-4">
-        By contacting Forgeit, you agree to this Privacy Policy.
+        By using our services, you agree to this Privacy Policy.
       </p>
     </>
   );

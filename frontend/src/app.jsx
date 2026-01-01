@@ -1,21 +1,30 @@
 import { useState } from "react";
+import Contact from "./components/Contact";
 import PolicyModal from "./components/PolicyModal";
 import PrivacyPolicy from "./policies/PrivacyPolicy";
 import TermsOfService from "./policies/TermsOfService";
 
-function App() {
-  // ✅ STATE (Correct place)
+export default function App() {
   const [privacyOpen, setPrivacyOpen] = useState(false);
   const [termsOpen, setTermsOpen] = useState(false);
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen flex flex-col">
 
-      {/* 🔹 Your existing site content */}
-      <header>Header</header>
-      <main>Main content</main>
+      {/* Header */}
+      <header className="p-6 text-center font-bold text-xl">
+        Forgeit
+      </header>
 
-      {/* ✅ PRIVACY POLICY MODAL */}
+      {/* Main Content */}
+      <main className="flex-1">
+        <Contact
+          openPrivacy={() => setPrivacyOpen(true)}
+          openTerms={() => setTermsOpen(true)}
+        />
+      </main>
+
+      {/* Privacy Policy Modal */}
       <PolicyModal
         open={privacyOpen}
         onClose={() => setPrivacyOpen(false)}
@@ -24,7 +33,7 @@ function App() {
         <PrivacyPolicy />
       </PolicyModal>
 
-      {/* ✅ TERMS OF SERVICE MODAL */}
+      {/* Terms of Service Modal */}
       <PolicyModal
         open={termsOpen}
         onClose={() => setTermsOpen(false)}
@@ -33,8 +42,8 @@ function App() {
         <TermsOfService />
       </PolicyModal>
 
-      {/* 🔹 Footer example */}
-      <footer className="text-center py-6">
+      {/* Footer */}
+      <footer className="text-center py-6 text-sm">
         <button
           onClick={() => setPrivacyOpen(true)}
           className="underline mx-2"
@@ -49,14 +58,7 @@ function App() {
           Terms of Service
         </button>
       </footer>
-  <Contact
-  openPrivacy={() => setPrivacyOpen(true)}
-  openTerms={() => setTermsOpen(true)}
-/>
-
 
     </div>
   );
 }
-
-export default App;
